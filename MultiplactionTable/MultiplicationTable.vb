@@ -22,15 +22,19 @@ Module MultiplicationTable
         Do Until userinput = "Q"
 
             Try
-                Console.WriteLine("Choose a number: ")
+                'Ask user to input a whole number
+                Console.Write("Choose a number: ")
                 userinput = Console.ReadLine()
                 variable = CInt(userinput)
                 Console.WriteLine($"You entered {variable}")
                 Console.WriteLine()
 
+                'Send users input to MultiplacationTable
                 Console.WriteLine(StrDup(80, "-"))
                 Console.WriteLine($"Enjoy Your {userinput} X {userinput} Times Table:")
-                MultiplacationTable()
+                Console.WriteLine()
+                MultiplacationTable(variable)
+
             Catch ex As Exception
 
                 If userinput <> "Q" Then Console.WriteLine("Please enter a whole number")
@@ -39,18 +43,19 @@ Module MultiplicationTable
 
         Loop
 
+        Console.WriteLine()
         Console.WriteLine("Have a nice day")
         Console.WriteLine("Press enter to close the window")
 
     End Sub
 
-    Sub MultiplacationTable()
+    Sub MultiplacationTable(ByVal variable As Integer)
 
         Dim result As String
 
-        For i = 1 To 12
+        For i = 1 To variable
 
-            For j = 1 To 12
+            For j = 1 To variable
                 result = (i * j).ToString
                 result = result.PadLeft(4)
                 Console.Write(result)
