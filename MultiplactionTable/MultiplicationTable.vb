@@ -30,6 +30,23 @@ Module MultiplicationTable
 
         Next
 
+    End Sub
+
+    Sub SecondTable()
+
+        Dim result As String
+
+        For i = 1 To 7
+
+            For j = 1 To 7
+                result = (i * j).ToString
+                result = result.PadLeft(4)
+                Console.Write(result)
+            Next
+
+            Console.WriteLine()
+
+        Next
 
     End Sub
 
